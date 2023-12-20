@@ -236,6 +236,24 @@ app.post('/api/cart/add', (req, res) => {
   });
 });
 
+app.get('/api/cart/items', (req, res) => {
+  const query = `
+    SELECT Cart.*, Product.Name, Product.Price
+    FROM Cart
+    JOIN Product ON Cart.ProductID = Product.ProductID
+    WHERE Cart.UserID IS NULL
+  `;
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Erreur lors de la récupération des articles du panier pour utilisateur non connecté', error);
+      res.status(500).json({ error: 'Erreur lors de la récupération des articles du panier pour utilisateur non connecté', details: error.message });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
+
 app.get('/api/cart/items/:userId', (req, res) => {
   const userId = req.params.userId;
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -9,7 +9,7 @@ const MobileMenu = ({ isOpen, toggleMobileMenu }) => {
 
     const handleNavLinkClick = () => {
         if (location.pathname === window.location.pathname) {
-        toggleMobileMenu();
+            toggleMobileMenu();
         }
     };
 
@@ -48,7 +48,7 @@ const MobileMenu = ({ isOpen, toggleMobileMenu }) => {
                 ) : (
                     null
                 )}
-                <NavLink exact to="/home" onClick={handleNavLinkClick}>
+                <NavLink exact="true" to="/home" onClick={handleNavLinkClick}>
                     Accueil
                 </NavLink>
                 <NavLink to="/contact" onClick={handleNavLinkClick}>

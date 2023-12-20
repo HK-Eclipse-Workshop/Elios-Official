@@ -14,6 +14,8 @@ const LoginForm = () => {
     password: '',
   });
 
+  const [loginError, setLoginError] = useState('');
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -61,10 +63,12 @@ const LoginForm = () => {
 
         navigate('/home');
       } else {
+        setLoginError('Email ou mot de passe incorrect.');
         const errorData = await response.json();
         console.error('Erreur de connexion:', errorData.error);
       }
     } catch (error) {
+      setLoginError('Erreur lors de la connexion. Veuillez réessayer.');
       console.error('Erreur lors de la connexion:', error.message);
     }
   };
@@ -76,11 +80,13 @@ const LoginForm = () => {
         <label>Email :</label>
         <input type="text" name="email" value={email} onChange={handleInputChange} />
         {errorMessages.email && <div className="error-message">{errorMessages.email}</div>}
+        {loginError && <div className="error-message">{loginError}</div>}
       </div>
       <div className="group__input">
         <label>Mot de passe :</label>
         <input type="password" name="password" value={password} onChange={handleInputChange} />
         {errorMessages.password && <div className="error-message">{errorMessages.password}</div>}
+        {loginError && <div className="error-message">{loginError}</div>}
       </div>
       <button type="submit" className="button__login" onClick={handleLogin}>Se connecter</button>
     </form>

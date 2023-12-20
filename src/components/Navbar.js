@@ -54,7 +54,7 @@ const Navbar = () => {
           <NavLink to="/home">
           <img src={Logo} alt="Elios logo"/>
           </NavLink>
-          <NavLink exact to="/home">
+          <NavLink exact="true" to="/home">
             Accueil
           </NavLink>
           <NavLink to="/contact">
