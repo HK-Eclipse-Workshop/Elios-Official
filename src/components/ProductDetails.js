@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 const ProductDetails = () => {
+  const navigate = useNavigate(); 
   const { user} = useAuth();
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
@@ -40,25 +41,21 @@ const ProductDetails = () => {
   }, [productId]);
 
   useEffect(() => {
-    // Sélectionnez la première couleur par défaut lorsque productDetails est mis à jour
     if (productDetails.colors && productDetails.colors.length > 0 && selectedColor === null) {
       handleColorChange(productDetails.colors[0].ColorID);
     }
   }, [productDetails.colors, selectedColor]);
   
   useEffect(() => {
-    // Mettez à jour les images filtrées lorsque la couleur ou les images sont mises à jour
     if (productDetails.images && selectedColor !== null) {
       setFilteredImages(productDetails.images.filter(image => image.ColorID === selectedColor));
     }
   
-    // Sélectionnez la première image par défaut lorsque les images sont filtrées
     setActiveImageIndex(0);
   }, [selectedColor, productDetails.images]);
 
   const handleColorChange = (colorId) => {
     setSelectedColor(colorId);
-    // Filtrer les images en fonction de la couleur sélectionnée
     const newFilteredImages = productDetails.images.filter(image => image.ColorID === colorId);
     setFilteredImages(newFilteredImages);
   };
@@ -99,8 +96,7 @@ const ProductDetails = () => {
       });
 
       if (response.ok) {
-        alert('Article ajouté au panier avec succès!');
-        // Vous pouvez rediriger l'utilisateur vers la page du panier ou effectuer d'autres actions
+        navigate('/cart')
       } else {
         alert('Erreur lors de l\'ajout de l\'article au panier. Veuillez réessayer plus tard.');
       }

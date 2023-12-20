@@ -1013,7 +1013,7 @@ section.login a:hover {
 
 .popup__cart .cart__list .cart__list__product .product__image {
   display: flex;
-  width: 200px;
+  width: 45%;
   height: 200px;
   justify-content: center;
   background-color: #EFEFEF;
@@ -1025,6 +1025,7 @@ section.login a:hover {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 55%;
 }
 
 .popup__cart .cart__list .cart__list__product img {
@@ -1043,6 +1044,50 @@ section.login a:hover {
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.button__add-products {
+  width: 100%;
+  text-align: center;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #212121;
+  background-color: #fbb900;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button__see-cart {
+  width: 100%;
+  text-align: center;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .cart__list__empty .button__shop {
@@ -1180,6 +1225,90 @@ section.dashboard .input__group {
   gap: 5px 0;
 }
 
+section.cart {
+  width: 100%;
+  padding: 90px 0;
+}
+
+section.cart .content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section.cart h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+}
+
+section.cart .cart__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  margin: 30px 0 0;
+  width: fit-content;
+}
+
+section.cart .cart__list .cart__list__product {
+  display: flex;
+  gap: 0 20px;
+  height: 200px;
+}
+
+section.cart .cart__list .cart__list__product .product__image {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  background-color: #EFEFEF;
+  padding: 30px 0;
+}
+
+section.cart .cart__list .cart__list__product .product__informations {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+section.cart .cart__list .cart__list__product img {
+  object-fit: contain;
+  width: 200px;
+}
+
+section.cart .cart__list__empty {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px 0;
+}
+
+.cart__list__empty p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cart__list__empty .button__shop {
+  width: 50%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #212121;
+  background-color: #fbb900;
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1280px) {
 
   section.login .form {
@@ -1204,6 +1333,7 @@ section.dashboard .input__group {
   nav .left__content .mobile__menu img {
     width: 40px;
     position: absolute;
+    top: 10px;
     left: calc(50% - 5%);
   }
 
@@ -1418,6 +1548,18 @@ section.dashboard .input__group {
 
   .popup__cart {
     width: 60%;
+  }
+
+  section.cart .cart__list {
+    width: 100%;
+  }
+
+  section.cart .cart__list .cart__list__product .product__image {
+    width: 50%;
+  }
+  
+  section.cart .cart__list .cart__list__product .product__informations {
+    width: 50%;
   }
 }
 

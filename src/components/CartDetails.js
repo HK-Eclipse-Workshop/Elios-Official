@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-const PopUpCart = ({ isOpen, togglePopUp }) => {
+const CartDetails = () => {
   const { user } = useAuth();
   const [cartItems, setCartItems] = useState([]);
   const [colors, setColors] = useState([]);
@@ -81,63 +81,55 @@ const PopUpCart = ({ isOpen, togglePopUp }) => {
   };
 
   return (
-    <div className={`popup__cart ${isOpen ? 'open' : ''}`}>
-      <div className="popup__cart__header">
-        <h2>Votre Panier</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="16"
-          width="12"
-          viewBox="0 0 384 512"
-          onClick={togglePopUp}
-        >
-          <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-        </svg>
-      </div>
-      <div className="cart__list">
-        {cartItems.length > 0 ? (
-          cartItems.map((item) => (
-            <div key={item.CartID} className="cart__list__product">
-              <div className="product__image">
-                <img
-                  src={process.env.PUBLIC_URL + '/images/product-images/' + getImagePath(item.Color)}
-                  alt={`Product ${item.ProductID}`}
-                />
+    <section className="cart">
+      <div className='content'>
+        <div className="cart__header">
+          <h2>Votre Panier</h2>
+        </div>
+        <div className="cart__list">
+          {cartItems.length > 0 ? (
+            cartItems.map((item) => (
+              <div key={item.CartID} className="cart__list__product">
+                <div className="product__image">
+                  <img
+                    src={process.env.PUBLIC_URL + '/images/product-images/' + getImagePath(item.Color)}
+                    alt={`Product ${item.ProductID}`}
+                  />
+                </div>
+                <div className="product__informations">
+                  <p className="product__name">{item.Name}</p>
+                  <p className="product__price">{`${item.Price} €`}</p>
+                  <p className="product__color">{`Couleur : ${getColorName(item.Color)}`}</p>
+                  <p className="product__size">{`Taille : ${item.Size} cm`}</p>
+                  <p className="product__quantity">{`Quantité : ${item.Quantity}`}</p>
+                  <button className="button__remove" onClick={() => handleRemoveFromCart(item.CartID)}>
+                    Supprimer
+                  </button>
+                </div>
               </div>
-              <div className="product__informations">
-                <p className="product__name">{item.Name}</p>
-                <p className="product__price">{`${item.Price} €`}</p>
-                <p className="product__color">{`Couleur : ${getColorName(item.Color)}`}</p>
-                <p className="product__size">{`Taille : ${item.Size} cm`}</p>
-                <p className="product__quantity">{`Quantité : ${item.Quantity}`}</p>
-                <button className="button__remove" onClick={() => handleRemoveFromCart(item.CartID)}>
-                  Supprimer
-                </button>
-              </div>
+            ))
+          ) : (
+            <div className="cart__list__empty">
+              <p>Votre panier est vide</p>
+              <NavLink to="/shop" className="button__shop">
+                Aller en Boutique
+              </NavLink>
             </div>
-          ))
-        ) : (
-          <div className="cart__list__empty">
-            <p>Votre panier est vide</p>
-            <NavLink to="/shop" className="button__shop">
-              Aller en Boutique
-            </NavLink>
-          </div>
-        )}
-      </div>
+          )}
 
-      {cartItems.length > 0 && (
-        <div className="buttons">
-          <NavLink to="/shop" className="button__add-products">
-            Ajouter des produits
-          </NavLink>
-          <NavLink to="/cart" className="button__see-cart">
-            voir mon panier
-          </NavLink>
+          {cartItems.length > 0 && (
+            <div className="buttons">
+              <NavLink to="/shop" className="button__add-products">
+                Ajouter des produits
+              </NavLink>
+            </div>
+
+          )}
+        </div>
+
       </div>
-      )}
-    </div>
+    </section>
   );
 };
 
-export default PopUpCart;
+export default CartDetails;

@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Product from './pages/Product';
 import Account from './pages/Account';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

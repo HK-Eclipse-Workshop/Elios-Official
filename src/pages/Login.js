@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import LoginForm from '../components/login/loginForm';
-import RegisterForm from '../components/login/registerForm';
+import LoginForm from '../components/login/LoginForm';
+import RegisterForm from '../components/login/RegisterForm';
 
 const Login = () => {
-  const [showLoginForm, setShowLoginForm] = useState(true);
   const [currentForm, setCurrentForm] = useState('login');
 
 
