@@ -1,38 +1,1428 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #FFF;
+  z-index: 100;
+  padding: 0 5%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .left__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  gap: 0 20px;
+}
+
+
+nav .left__content .mobile__menu {
+  display: none;
+}
+
+nav .left__content .mobile__menu svg {
+  cursor: pointer;
+}
+
+nav .left__content .dekstop__menu {
+  display: flex;
+  align-items: center;
+  gap: 0 40px;
+}
+
+nav .left__content .dekstop__menu img {
+  display: flex;
+  width: 40px;
+}
+
+nav .left__content .dekstop__menu a {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212121;
+  text-decoration: none;
+}
+
+nav .left__content .dekstop__menu a::after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 4px 0 0 0;
+  height: 2px;
+  background-color: #212121;
+  transition: width 0.3s;
+  border-radius: 100px;
+}
+
+nav .left__content .dekstop__menu a:first-child:hover::after, nav .left__content .dekstop__menu a:first-child.active::after {
+
+  width: 0%;
+  transition: width 0.3s;
+}
+
+
+nav .left__content .dekstop__menu a:hover::after, nav .left__content .dekstop__menu a.active::after {
+
+  width: 100%;
+  transition: width 0.3s;
+}
+
+nav .right__content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  gap: 0 40px;
+}
+
+nav .right__content .buttons__group {
+  display: flex;
+  gap: 0 20px;
+}
+
+nav .right__content .button__account, .popup__menu .popup__menu__content .button__account {
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+  background-color: #fbb900;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.popup__menu .popup__menu__content p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.popup__menu .popup__menu__content p {
+  text-transform: capitalize;
+}
+
+.popup__menu .popup__menu__content .button__account {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+nav .right__content .button__logout, .popup__menu .popup__menu__footer .button__logout {
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.popup__menu .popup__menu__footer .button__logout {
+  width: 100%;
+}
+
+nav .right__content svg {
+  width: 20px;
+  cursor: pointer;
+}
+
+/* Home */
+/* Landing */
+
+section.home {
+  width: 100%;
+  height: 100vh;
+  background: url(../public/images/backgroundDesktopAlternateDef.png) no-repeat;
+  background-size: cover;
+}
+
+section.home .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100% - 220px);
+  padding: 70px 0 0;
+}
+
+section.home .content .top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px 0;
+}
+
+section.home .content .top-content img {
+  width: 260px;
+}
+
+
+section.home .content .top-content h2 {
+  width: fit-content;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  color: #212121;
+  background-color: #F8F8F8BF;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  padding: 5px 10px;
+
+}
+
+section.home .content .bottom-content {
+  display: flex;
+  justify-content: center;
+}
+
+section.home .content .bottom-content p {
+  width: 80%;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #212121;
+  background-color: #F8F8F8BF;
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+/* Home */
+  /* Features */
+
+section.features {
+  width: 100%;
+  padding: 60px 0
+}
+
+section.features h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section.features .cards {
+  margin: 30px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 0 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section.features .cards .card {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section.features .cards .card img {
+  width: 90px;
+}
+
+section.features .cards .card img.product {
+  width: unset;
+  height: 380px;
+}
+
+section.features .cards .card .card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+section.features .cards .card .card__content h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+section.features .cards .card .card__content p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+  /* FOOTER */
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;
+  padding: 80px 0 90px;
+  background-color: #EFEFEF;
+}
+
+footer img {
+  width: 200px;
+}
+footer .social-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+footer .social-media a img {
+  width: 20px;
+  height: 20px;
+  transition: all .2s;
+}
+
+footer .social-media a:hover img {
+  transform: scale(1.2);
+}
+
+section.contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 90px 0 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+section.contact img {
+  width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+section.contact .form__container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 30px 0 0;
+  gap: 10px 0;
+}
+
+section.contact .form__container p {
+  width: 50%;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+  margin: 0 auto;
+}
+
+section.contact .form__container h2 {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  margin: 30px 0 0;
+}
+
+section.contact .form__container form {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 20px 0;
+  margin: 30px auto 0;
+}
+
+section.contact .form__container form input {
+  width: 100%;
+  background-color: #EFEFEF;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  padding: 10px 20px;
+}
+
+section.contact .form__container form textarea {
+  width: 100%;
+  background-color: #EFEFEF;
+  border: none;
+  border-radius: 10px;
+  resize: none;
+  padding: 10px 20px;
+}
+
+section.contact .form__container form div input, section.contact .form__container form textarea, section.contact .form__container form div input::placeholder, section.contact .form__container form textarea::placeholder {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.contact .form__container form div .error-message {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 5px 0 0 20px;
+  color: red;
+}
+
+.error-message {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 5px 0 0;
+  color: red;
+}
+
+section.contact .form__container form .submit-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+section.contact .form__container form .submit-button button {
+  width: 30%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 100px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden; 
+  cursor: pointer;
+}
+
+section.contact .form__container form .submit-button button.clicked {
+  width: 50%;
+  color: #212121;
+  background-color: #fbb900;
+}
+
+
+
+
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #8C8E90;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.color-input.color-0:checked::before {
+  background-color: #cc9c6d;
+  border-color: #cc9c6d;
+}
+
+.color-input.color-1:checked::before {
+  background-color: #3e2828;
+  border-color: #3e2828;
+}
+
+section.shop {
+  width: 100%;
+  padding: 90px 0 200px;
+}
+
+section.shop h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+}
+
+section.shop .content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section.shop .products {
+  margin: 30px 0 0;
+  display: flex;
+  justify-content: left;
+  gap: 0 30px;
+}
+
+section.shop .products .product {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #E8E8E8;
+}
+
+section.shop .products .product img {
+  display: flex;
+  width: 120px;
+  margin: 0 auto;
+}
+
+section.shop .products .product a {
+  text-decoration: inherit;
+  color: #212121;
+}
+
+section.shop .products .product a:visited {
+  text-decoration: none; 
+  color: inherit;
+}
+
+section.shop .products .product .product__content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+  padding: 15px 20px;
+}
+
+section.shop .products .product .product__content .product__name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+section.shop .products .product .product__content .product__price {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+section.shop .products .product .product__content .product__colors {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+}
+
+section.product {
+  width: 100%;
+  padding: 90px 0;
+}
+
+section.product .content {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+
+section.product .content .product__images__dekstop {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 10px;
+}
+
+section.product .content .product__images__dekstop .product__image {
+  width: calc(50% - 5px);
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFEFEF;
+}
+
+section.product .content .product__images__dekstop .product__image img {
+
+}
+
+section.product .content .product__images__mobile {
+  display: none;
+  flex-direction: column;
+}
+
+section.product .content .product__informations {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 50px;
+  gap: 10px 0;
+}
+
+.product__informations .product__name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: left;
+}
+
+.product__informations .product__price {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+}
+
+.product__informations .product__colors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.product__informations .product__colors h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+
+.product__informations .product__color {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+}
+
+.product__informations .product__colors .product__colors__inputs {
+  display: flex;
+  gap: 0 10px;
+}
+
+.product__informations .product__sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+
+.product__informations .product__sizes h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+.product__informations .product__size {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+}
+
+
+.product__informations .product__sizes .product__sizes__inputs {
+  display: flex;
+  gap: 0 10px;
+}
+
+.product__informations .product__sizes .product__sizes__inputs .size__option {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid #EFEFEF;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product__informations .product__sizes .product__sizes__inputs .size__option.selected {
+  border-color: #212121;
+}
+
+.product__informations .product__quantities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.product__informations .product__quantity {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+}
+
+.product__informations .product__quantities h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+.product__informations .product__quantities .handle__quantity {
+  display: flex;
+}
+
+.product__informations .product__quantities .handle__quantity button:first-child {
+  margin: 0;
+  background-color: #fbb900;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px 0 0 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product__informations .product__quantities .handle__quantity button:last-child {
+  margin: 0;
+  background-color: #fbb900;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 0 12px 12px 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product__informations .product__quantities .handle__quantity p {
+  width: 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  background-color: #EFEFEF;
+  padding: 6px;
+}
+
+.product__informations .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  margin: 20px 0 0 0;
+}
+
+.product__informations .button__cart {
+  width: 100%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+  background-color: unset;
+  border-radius: 8px;
+  border: 1px solid #212121;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.product__informations .button__order {
+  width: 100%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product__informations .button__order:hover {
+  background-color: #000000;
+}
+
+.product__informations .product__characteristics {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 0;
+  border-top: 1px solid #EFEFEF;
+}
+
+
+.product__informations .product__characteristics .product__characteristics__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.product__informations .product__characteristics .product__characteristics__header h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+.product__informations .product__characteristics h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.product__informations .product__characteristics li {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+  padding: 4px 0;
+}
+
+.product__informations .product__characteristics {
+  cursor: pointer;
+}
+
+.product__informations .product__characteristics .characteristics-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  cursor: default;
+}
+
+.product__informations .product__characteristics.visible .characteristics-content {
+  max-height: 340px;
+}
+
+.product__characteristics__header .rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out; 
+}
+
+.product__characteristics__header .initial {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+section.login {
+  width: 100%;
+  height: 100vh;
+  padding: 60px 0;
+}
+
+section.login .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+section.login .form h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+section.login .form .form__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+section.login .form .group__input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+}
+
+section.login .form .form__content .group__input  label {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+section.login .form .form__content .group__input  input {
+  width: 100%;
+  border-radius: 8px;
+  height: 40px;
+  padding: 10px 20px;
+  border: 1px solid #E8E8E8;
+}
+
+section.login .form .button__login {
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0 0;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+section.login .form .button__login:hover {
+  background-color: #000000;
+}
+
+section.login a {
+  margin: 20px 0 0;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+section.login a:hover {
+  text-decoration: underline;
+}
+
+.popup__menu {
+  display: none;
+}
+
+.popup__menu.open {
+  left: 0;
+}
+
+.popup__menu  .popup__menu__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__menu  .popup__menu__content a {
+  border-bottom: 1px solid #E8E8E8;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 0;
+  color: #212121;
+  text-decoration: none;
+}
+
+
+.popup__cart {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px 0;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  padding: 30px;
+  transition: right 0.6s ease-out;
+}
+
+.popup__cart.open {
+  right: 0;
+}
+
+.popup__cart .popup__cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__cart .popup__cart__header h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+.popup__cart .popup__cart__header svg {
+  cursor: pointer;
+}
+
+.popup__cart .cart__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.popup__cart .cart__list .cart__list__product {
+  display: flex;
+  gap: 0 20px;
+}
+
+.popup__cart .cart__list .cart__list__product .product__image {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  background-color: #EFEFEF;
+  padding: 30px 0;
+}
+
+.popup__cart .cart__list .cart__list__product .product__informations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.popup__cart .cart__list .cart__list__product img {
+  object-fit: contain;
+  width: 200px;
+}
+
+.popup__cart .cart__list__empty {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px 0;
+}
+
+.cart__list__empty p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cart__list__empty .button__shop {
+  width: 50%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #212121;
+  background-color: #fbb900;
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+section.dashboard {
+  width: 100%;
+  padding: 90px 0;
+}
+
+section.dashboard .content {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+
+section.dashboard h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+}
+
+section.dashboard h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: left;
+}
+
+section.dashboard p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+}
+
+section.dashboard p.user {
+  text-transform: capitalize;
+}
+
+
+section.dashboard label {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+section.dashboard input {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  padding: 10px 20px;
+  border: 1px solid #E8E8E8;
+}
+
+
+section.dashboard .content .card__profile { 
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  gap: 30px 0;
+  padding: 15px 20px;
+  border: 1px solid #EFEFEF;
+  border-radius: 8px;
+}
+
+section.dashboard .content .card__profile  .card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+section.dashboard .content .card__profile  .card__body .line__group__profile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px 0;
+}
+
+section.dashboard .content .card__profile .card__body .button__profile {
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #212121;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 30px 0 0;
+}
+
+section.dashboard .content .card__profile .card__body .button__profile_alt {
+  width: 100%;
+  height: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+  background-color: #fbb900;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 30px 0 0;
+}
+
+section.dashboard .input__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+}
+
+@media screen and (max-width: 1280px) {
+
+  section.login .form {
+    width: 40%;
   }
-  to {
-    transform: rotate(360deg);
+
+  section.dashboard .content .card__profile {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  nav {
+    padding: 0 5%;
+  }
+
+  nav .left__content .mobile__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .left__content .mobile__menu img {
+    width: 40px;
+    position: absolute;
+    left: calc(50% - 5%);
+  }
+
+  nav .left__content .dekstop__menu {
+    display: none;
+  }
+
+  nav .right__content .buttons__group {
+    display: none;
+  }
+
+  /* Home */
+  /* Landing */
+
+  section.home {
+    width: 100%;
+    height: 100vh;
+    background: url(../public/images/backgroundMobileDef.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  section.home .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 220px);
+    padding: 70px 0 0;
+  }
+
+  section.home .content .top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+  }
+
+  section.home .content .top-content img {
+    width: 260px;
+  }
+
+
+  section.home .content .top-content h2 {
+    width: fit-content;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #212121;
+    background-color: #F8F8F8BF;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 5px 10px;
+
+  }
+
+  section.home .content .bottom-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  section.home .content .bottom-content p {
+    width: 80%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #212121;
+    background-color: #F8F8F8BF;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+
+  }
+
+  /* Home */
+  /* Features */
+
+  section.features {
+    padding: 30px 0;
+  }
+
+  section.features .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px 0;
+  }
+
+  section.features .cards .card {
+    width: 60%;
+  }
+
+
+  section.contact .form__container p {
+    width: 100%;
+  }
+
+  section.contact .form__container form {
+    width: 100%;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+    padding: 80px 0 90px;
+    background-color: #EFEFEF;
+  }
+
+  footer img {
+    width: 200px;
+  }
+  footer .social-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+  }
+
+  footer .social-media a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  section.dashboard .content .card__profile {
+    width: 100%;
+  }
+
+  section.product .products {
+    justify-content: center;
+  }
+
+  section.product .content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  section.product .content .product__images__dekstop {
+    display: none;
+  }
+
+  section.product .content .product__images__mobile {
+    display: flex;
+    gap: 5px 0;
+  }
+
+  .product__image.product__image--active {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFEFEF;
+    padding: 20px 0;
+  }
+
+  .product__image.product__image--active img {
+    height: 300px;
+  }
+
+  .product__thumbnail-images {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    gap: 0 5px;
+  }
+
+  .product__thumbnail-images .product__image-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc((100% / 3) - 3px);
+    background-color: #EFEFEF;
+    padding: 20px 0;
+    opacity: 0.5;
+  }
+
+  .product__thumbnail-images .product__image-thumbnail.active {
+    opacity: 1;
+  }
+
+  .product__thumbnail-images .product__image-thumbnail img {
+    height: 150px;
+  }
+
+  section.product .content .product__informations {
+    width: 100%;
+    padding: 0;
+  }
+
+  .popup__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    padding: 30px;
+    transition: left 0.6s ease-out;
+  }
+
+  .popup__cart {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  section.shop .products {
+    justify-content: center;
+  }
+
+  section.shop h2 {
+    text-align: center;
+  }
+
+  section.login .form {
+    width: 75%;
+  }
+
+  .popup__menu {
+    width: 100%;
+  }
+
+  .popup__cart {
+    width: 100%;
   }
 }
